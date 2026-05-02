@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>foodiechina888 — Chinese home cooking, done and dusted out of this world.</title>
+<meta name="description" content="foodiechina888 is Wayne Shen's Chinese cooking channel. Real Chinese home cooking, done and dusted out of this world. With grandma's cleaver, evil chicken bouillon, and water from Mississippi River.">
+<meta name="keywords" content="foodiechina888, Wayne Shen, Chinese cooking, Chinese food, Chinese recipes, home cooking">
+<meta property="og:type" content="website">
+<meta property="og:title" content="foodiechina888 — Chinese home cooking, done and dusted out of this world.">
+<meta property="og:description" content="Wayne Shen's Chinese cooking channel. Real Chinese home cooking with grandma's cleaver, evil chicken bouillon, and water from Mississippi River.">
+<meta property="og:url" content="https://foodiechina888.com">
+<meta property="og:site_name" content="foodiechina888">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="foodiechina888">
+<meta name="twitter:description" content="Chinese home cooking, done and dusted out of this world. By Wayne Shen.">
+<link rel="canonical" href="https://foodiechina888.com">
+<meta name="google-site-verification" content="D6DYBwe8B-BTlMk88sdAoNlise5E9dcAKh7Dnr-8Uxw" />
+<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --white: #ffffff;
+  --off-white: #f5f5f7;
+  --light-gray: #e8e8ed;
+  --mid-gray: #6e6e73;
+  --dark-gray: #1d1d1f;
+  --black: #000000;
+  --border: rgba(0,0,0,0.08);
+  --border-strong: rgba(0,0,0,0.16);
+  --accent: #c0392b;
+  --accent-soft: rgba(192,57,43,0.08);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: var(--white);
+  color: var(--dark-gray);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.nav-logo {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  color: var(--dark-gray);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--dark-gray);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover { opacity: 1; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding-top: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.hero-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.1s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+}
+
+.hero-title {
+  font-size: clamp(56px, 10vw, 120px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  color: var(--dark-gray);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.2s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+}
+
+.hero-catchphrase {
+  font-size: clamp(22px, 3.5vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: var(--accent);
+  margin-bottom: 24px;
+  text-transform: lowercase;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.3s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+}
+
+.hero-tagline {
+  font-size: clamp(19px, 2.5vw, 28px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+  color: var(--mid-gray);
+  max-width: 680px;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.45s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.6s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  border-radius: 980px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);
+  white-space: nowrap;
+}
+
+.btn-dark {
+  background: var(--dark-gray);
+  color: var(--white);
+}
+
+.btn-dark:hover {
+  background: var(--black);
+  transform: scale(1.02);
+}
+
+.btn-light {
+  background: transparent;
+  color: var(--dark-gray);
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.btn-light:hover {
+  background: var(--off-white);
+  transform: scale(1.02);
+}
+
+.btn-bmc {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+}
+
+.btn-bmc:hover {
+  background: #a93226;
+  transform: scale(1.02);
+}
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.8s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--mid-gray));
+  animation: scrollPulse 2s 1.5s infinite;
+}
+
+/* ── SOCIAL STRIP ── */
+.social-strip {
+  background: var(--off-white);
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  padding: 0;
+  overflow: hidden;
+}
+
+.social-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.social-label-cell {
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  border-right: 0.5px solid var(--border);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.social-label-text {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+}
+
+.social-links {
+  display: flex;
+  flex: 1;
+}
+
+.social-link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 28px 12px;
+  text-decoration: none;
+  color: var(--dark-gray);
+  border-right: 0.5px solid var(--border);
+  transition: background 0.2s;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.social-link:last-child { border-right: none; }
+
+.social-link:hover {
+  background: var(--white);
+}
+
+.social-link svg {
+  width: 22px;
+  height: 22px;
+  color: var(--dark-gray);
+  transition: color 0.2s;
+}
+
+.social-count {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.social-count-label {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--mid-gray);
+  letter-spacing: 0.04em;
+}
+
+.social-name {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--dark-gray);
+}
+
+.edit-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+}
+.edit-overlay.open { display: flex; }
+
+.edit-modal {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+  margin: 24px;
+  box-shadow: 0 32px 64px rgba(0,0,0,0.18);
+}
+
+.edit-modal-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--dark-gray);
+  margin-bottom: 6px;
+}
+
+.edit-modal-sub {
+  font-size: 13px;
+  color: var(--mid-gray);
+  margin-bottom: 28px;
+}
+
+.edit-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.edit-field {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--off-white);
+  border-radius: 12px;
+  border: 0.5px solid var(--border);
+}
+
+.edit-field-icon svg { width: 18px; height: 18px; color: var(--dark-gray); display: block; }
+
+.edit-field-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark-gray);
+  width: 90px;
+  flex-shrink: 0;
+  letter-spacing: -0.01em;
+}
+
+.edit-field-input {
+  flex: 1;
+  background: var(--white);
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--dark-gray);
+  outline: none;
+  text-align: right;
+  transition: border-color 0.15s;
+}
+.edit-field-input:focus { border-color: var(--dark-gray); background: var(--white); }
+
+.edit-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.modal-btn {
+  padding: 11px 22px;
+  border-radius: 980px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+}
+.modal-btn-cancel { background: var(--off-white); color: var(--dark-gray); }
+.modal-btn-cancel:hover { background: var(--light-gray); }
+.modal-btn-save { background: var(--accent); color: var(--white); }
+.modal-btn-save:hover { background: #a93226; }
+
+.total-bar {
+  background: var(--white);
+  border-top: 0.5px solid var(--border);
+  padding: 14px 40px;
+}
+.total-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.total-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+}
+.total-count {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+}
+.edit-trigger {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--mid-gray);
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 980px;
+  border: 0.5px solid var(--border);
+  background: transparent;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.edit-trigger:hover { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+
+/* ── SECTION BASE ── */
+.section {
+  padding: 120px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.section-heading {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--dark-gray);
+  margin-bottom: 24px;
+}
+
+.section-body {
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--mid-gray);
+  max-width: 600px;
+  letter-spacing: -0.01em;
+}
+
+/* ── ABOUT ── */
+.about {
+  background: var(--off-white);
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.about-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.about-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 0.5px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.about-stat {
+  background: var(--white);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.stat-num {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--dark-gray);
+  line-height: 1;
+  word-break: break-word;
+}
+
+.stat-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--mid-gray);
+  letter-spacing: -0.01em;
+  word-break: break-word;
+}
+
+/* ── PILLARS ── */
+.pillars-section {
+  background: var(--white);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.pillars-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px;
+}
+
+.pillars-header {
+  margin-bottom: 72px;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 0.5px solid var(--border);
+}
+
+.pillar {
+  background: var(--white);
+  padding: 48px 40px;
+  transition: background 0.3s;
+}
+
+.pillar:hover { background: var(--off-white); }
+
+.pillar-num {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 32px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pillar-title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--dark-gray);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.pillar-body {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--mid-gray);
+  letter-spacing: -0.005em;
+}
+
+/* ── QUOTE ── */
+.quote-section {
+  background: var(--dark-gray);
+  padding: 120px 24px;
+  text-align: center;
+  border-top: 3px solid var(--accent);
+}
+
+.quote-text {
+  font-size: clamp(36px, 6vw, 80px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--white);
+  max-width: 900px;
+  margin: 0 auto 20px;
+  text-transform: lowercase;
+}
+
+.quote-text em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.quote-attr {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── CUISINES ── */
+.cuisines-section {
+  background: var(--white);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.cuisines-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px;
+}
+
+.cuisines-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  gap: 40px;
+}
+
+.cuisines-header-note {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--mid-gray);
+  max-width: 280px;
+  text-align: right;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.cuisines-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 0.5px solid var(--border);
+}
+
+.cuisine-card {
+  background: var(--white);
+  padding: 36px 28px;
+  transition: background 0.25s;
+  cursor: default;
+}
+
+.cuisine-card:hover { background: var(--off-white); }
+
+.cuisine-abbr {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.cuisine-name {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--dark-gray);
+  margin-bottom: 6px;
+}
+
+.cuisine-region {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--mid-gray);
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
+}
+
+.cuisine-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--mid-gray);
+  font-weight: 300;
+}
+
+/* ── CONNECT ── */
+.connect-section {
+  background: var(--off-white);
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.connect-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.connect-heading {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--dark-gray);
+  margin-bottom: 20px;
+}
+
+.connect-sub {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--mid-gray);
+  letter-spacing: -0.01em;
+}
+
+.email-form {
+  background: var(--white);
+  border: 0.5px solid var(--border);
+  border-radius: 18px;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.email-input {
+  flex: 1;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 400;
+  color: var(--dark-gray);
+  background: var(--off-white);
+  border: 0.5px solid var(--border);
+  border-radius: 980px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  -webkit-font-smoothing: antialiased;
+}
+
+.email-input::placeholder { color: var(--mid-gray); }
+.email-input:focus { border-color: var(--dark-gray); background: var(--white); }
+
+.email-btn {
+  padding: 14px 24px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  border-radius: 980px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+  -webkit-font-smoothing: antialiased;
+}
+
+.email-btn:hover { background: #a93226; transform: scale(1.02); }
+
+.form-note {
+  font-size: 12px;
+  color: var(--mid-gray);
+  letter-spacing: 0.01em;
+}
+
+/* ── CONTACT ── */
+.contact-section {
+  background: var(--white);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.contact-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: stretch;
+}
+
+.contact-heading {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--dark-gray);
+  margin-bottom: 20px;
+}
+
+.contact-sub {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--mid-gray);
+  letter-spacing: -0.01em;
+}
+
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 0.5px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.contact-card {
+  background: var(--white);
+  padding: 48px 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: background 0.2s;
+  flex: 1;
+}
+
+.contact-card:hover { background: var(--off-white); }
+
+.contact-card-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--off-white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-card-icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--dark-gray);
+}
+
+.contact-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-card-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+}
+
+.contact-card-value {
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-card-value:hover { text-decoration: underline; }
+
+/* ── BUY ME A COFFEE BUTTON ── */
+.bmc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: #FF5F5F;
+  border-radius: 980px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.bmc-btn:hover { opacity: 0.88; transform: scale(1.02); }
+.bmc-btn img { width: 22px; height: 22px; }
+.bmc-btn span {
+  font-family: 'Poppins', -apple-system, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--white);
+  border-top: 0.5px solid var(--border);
+  padding: 40px 24px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--dark-gray);
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: var(--mid-gray);
+  letter-spacing: 0.01em;
+}
+
+.footer-copy a { color: var(--accent); text-decoration: none; }
+.footer-copy a:hover { color: var(--dark-gray); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.75s cubic-bezier(0.25,0.46,0.45,0.94),
+              transform 0.75s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* Staggered animations via nth-child — no inline style needed */
+.pillar.visible:nth-child(1) { transition-delay: 0.05s; }
+.pillar.visible:nth-child(2) { transition-delay: 0.15s; }
+.pillar.visible:nth-child(3) { transition-delay: 0.25s; }
+
+.cuisine-card.visible:nth-child(1) { transition-delay: 0.00s; }
+.cuisine-card.visible:nth-child(2) { transition-delay: 0.05s; }
+.cuisine-card.visible:nth-child(3) { transition-delay: 0.10s; }
+.cuisine-card.visible:nth-child(4) { transition-delay: 0.15s; }
+.cuisine-card.visible:nth-child(5) { transition-delay: 0.20s; }
+.cuisine-card.visible:nth-child(6) { transition-delay: 0.25s; }
+.cuisine-card.visible:nth-child(7) { transition-delay: 0.30s; }
+.cuisine-card.visible:nth-child(8) { transition-delay: 0.35s; }
+
+.about-stat.visible:nth-child(1) { transition-delay: 0.05s; }
+.about-stat.visible:nth-child(2) { transition-delay: 0.12s; }
+.about-stat.visible:nth-child(3) { transition-delay: 0.19s; }
+.about-stat.visible:nth-child(4) { transition-delay: 0.26s; }
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  background: var(--dark-gray);
+  color: var(--white);
+  padding: 14px 24px;
+  border-radius: 980px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-left: 3px solid var(--accent);
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Spinner for subscribe button */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* ── DIVIDER ── */
+.full-divider {
+  height: 0.5px;
+  background: var(--border);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .about-inner { grid-template-columns: 1fr; gap: 60px; }
+  .connect-inner { grid-template-columns: 1fr; gap: 60px; }
+  .contact-inner { grid-template-columns: 1fr; gap: 60px; }
+  .cuisines-grid { grid-template-columns: repeat(2, 1fr); }
+  .cuisines-header { flex-direction: column; align-items: flex-start; }
+  .cuisines-header-note { text-align: left; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { gap: 20px; }
+  .nav-links li:nth-child(n+3) { display: none; }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .about-stat-grid { grid-template-columns: 1fr 1fr; }
+  .cuisines-grid { grid-template-columns: 1fr 1fr; }
+  .social-label-cell { display: none; }
+  .social-link { padding: 20px 8px; font-size: 10px; }
+  footer .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .cuisines-grid { grid-template-columns: 1fr; }
+  .form-row { flex-direction: column; }
+  .nav-links { display: none; }
+  .about-stat { padding: 24px 20px; }
+  .stat-num { font-size: 32px; }
+  .stat-label { font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">foodiechina888</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#explore">Style</a></li>
+    <li><a href="#cuisines">The Lore</a></li>
+    <li><a href="#connect">Follow</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://www.buymeacoffee.com/foodiechina888" target="_blank" rel="noopener" style="color:var(--accent);opacity:1;font-weight:500;">💧 Refill the Mississippi River</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">by Wayne Shen</p>
+  <h1 class="hero-title">foodiechina888</h1>
+  <p class="hero-catchphrase">Done and dusted,<br>out of this world.</p>
+  <p class="hero-tagline">Satirical. Fast-paced. Genuinely delicious. Real Chinese home cooking — grandma's cleaver, evil chicken bouillon, water from Mississippi River, and always a Thai massage for the meat.</p>
+  <div class="hero-cta">
+    <a href="#explore" class="btn btn-dark">Explore ↓</a>
+    <a href="#about" class="btn btn-light">My Story</a>
+    <a href="https://www.buymeacoffee.com/foodiechina888" target="_blank" rel="noopener" class="btn btn-bmc">💧 Refill the Mississippi River</a>
+  </div>
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- SOCIAL STRIP -->
+<div class="social-strip">
+  <div class="social-inner">
+    <div class="social-label-cell">
+      <span class="social-label-text">Follow</span>
+    </div>
+    <div class="social-links">
+      <a href="https://www.youtube.com/@foodiechina888" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        <span class="social-count" id="count-youtube">—</span>
+        <span class="social-count-label">subscribers</span>
+        <span class="social-name">YouTube</span>
+      </a>
+      <a href="https://www.facebook.com/foodiechina888" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <span class="social-count" id="count-facebook">—</span>
+        <span class="social-count-label">followers</span>
+        <span class="social-name">Facebook</span>
+      </a>
+      <a href="https://www.instagram.com/foodiechina888/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        <span class="social-count" id="count-instagram">—</span>
+        <span class="social-count-label">followers</span>
+        <span class="social-name">Instagram</span>
+      </a>
+      <a href="https://www.tiktok.com/@foodiechina888" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        <span class="social-count" id="count-tiktok">—</span>
+        <span class="social-count-label">followers</span>
+        <span class="social-name">TikTok</span>
+      </a>
+      <a href="https://www.threads.com/@foodiechina888" target="_blank" rel="noopener" class="social-link" aria-label="Threads">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.028-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 013.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.583-1.301-.881-2.344-.887h-.045c-.797 0-1.864.199-2.543 1.089l-1.737-1.182c.976-1.342 2.502-2.083 4.28-2.083h.064c2.865.019 4.717 1.785 4.965 4.72a9.346 9.346 0 011.004.43c1.277.67 2.257 1.662 2.839 2.864.814 1.716.843 4.35-1.221 6.372-1.557 1.524-3.512 2.24-6.22 2.279z"/></svg>
+        <span class="social-count" id="count-threads">—</span>
+        <span class="social-count-label">followers</span>
+        <span class="social-name">Threads</span>
+      </a>
+    </div>
+  </div>
+  <!-- TOTAL BAR -->
+  <div class="total-bar">
+    <div class="total-bar-inner">
+      <span class="total-label">Total followers</span>
+      <span class="total-count" id="total-count">—</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="reveal">
+      <p class="section-tag">Who is Wayne Shen</p>
+      <h2 class="section-heading">Real recipes. Surreal delivery.</h2>
+      <p class="section-body">foodiechina888 is Wayne Shen — a content creator who turned a cooking channel into something far stranger and more beloved: a deadpan, satirical universe where grandma's cleaver meets water from Mississippi River, the meat always gets a Thai massage, and every dish ends the same way.</p>
+      <br>
+      <p class="section-body">Beneath the humor is a genuine passion for Chinese home cooking. By making authentic techniques accessible and wildly entertaining, Wayne has become one of the most significant food influencers in the digital world — teaching millions to cook while making them laugh out loud.</p>
+    </div>
+    <div class="about-stat-grid reveal" style="transition-delay:0.15s">
+      <div class="about-stat">
+        <span class="stat-num">11.8M</span>
+        <span class="stat-label">Total followers across all platforms</span>
+      </div>
+      <div class="about-stat">
+        <span class="stat-num">2026</span>
+        <span class="stat-label">Still going strong</span>
+      </div>
+      <div class="about-stat">
+        <span class="stat-num">China</span>
+        <span class="stat-label">Home base</span>
+      </div>
+      <div class="about-stat">
+        <span class="stat-num">∞</span>
+        <span class="stat-label">water from Mississippi River</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars-section" id="explore">
+  <div class="pillars-inner">
+    <div class="pillars-header reveal">
+      <p class="section-tag">The foodiechina888 universe</p>
+      <h2 class="section-heading">Fast, funny, and genuinely delicious.</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <p class="pillar-num">01</p>
+        <h3 class="pillar-title">Satirical Recipe Videos</h3>
+        <p class="pillar-body">Fast-paced, deadpan, and utterly unique. Wayne narrates each dish with a straight face and a surreal script — "give it a Thai massage," "add some evil chicken bouillon," "leave it alone" — while actually teaching you how to cook authentic Chinese food.</p>
+      </div>
+      <div class="pillar reveal" style="transition-delay:0.1s">
+        <p class="pillar-num">02</p>
+        <h3 class="pillar-title">The Grandma Universe</h3>
+        <p class="pillar-body">Ingredients come from grandma's garden. The cleaver is grandma's. Cousin's hands make an appearance. A sprawling cast of relatives populates every video, turning simple recipes into family sagas — and making every dish feel like home.</p>
+      </div>
+      <div class="pillar reveal" style="transition-delay:0.2s">
+        <p class="pillar-num">03</p>
+        <h3 class="pillar-title">Authentic Techniques</h3>
+        <p class="pillar-body">Strip away the jokes and you have genuinely excellent Chinese home cooking. Real methods, real ingredients — just delivered with evil chicken bouillon, unexpired noodles, and a splash of water from Mississippi River. Always ending: "Dish up! Done and dusted out of this world!"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <p class="quote-text reveal">Done and dusted,<br><em>out of this world.</em></p>
+  <p class="quote-attr reveal" style="transition-delay:0.15s">— Wayne Shen · The catchphrase · Every single video · Without exception</p>
+</div>
+
+<!-- LORE / SIGNATURE ELEMENTS -->
+<section class="cuisines-section" id="cuisines">
+  <div class="cuisines-inner">
+    <div class="cuisines-header reveal">
+      <div>
+        <p class="section-tag">Inside the universe</p>
+        <h2 class="section-heading">The lore you need to know.</h2>
+      </div>
+      <p class="cuisines-header-note">Recurring gags, ingredients, and phrases that have become memes in the culinary world.</p>
+    </div>
+    <div class="cuisines-grid">
+      <div class="cuisine-card reveal">
+        <span class="cuisine-abbr">01</span>
+        <h3 class="cuisine-name">Water from Mississippi River</h3>
+        <p class="cuisine-region">The Signature Gag</p>
+        <p class="cuisine-desc">Whether rinsing vegetables or loosening a sauce, water from Mississippi River is always on hand. A joke that confuses and delights international viewers in equal measure.</p>
+      </div>
+      <div class="cuisine-card reveal" style="transition-delay:0.05s">
+        <span class="cuisine-abbr">02</span>
+        <h3 class="cuisine-name">Done and Dusted, Out of This World</h3>
+        <p class="cuisine-region">The Catchphrase</p>
+        <p class="cuisine-desc">"Dish up! Done and dusted out of this world!" Every video. Every time. Non-negotiable. The most reliable sign-off in food content, and now a genuine internet meme.</p>
+      </div>
+      <div class="cuisine-card reveal" style="transition-delay:0.1s">
+        <span class="cuisine-abbr">03</span>
+        <h3 class="cuisine-name">Evil Chicken Bouillon</h3>
+        <p class="cuisine-region">Humorous Ingredients</p>
+        <p class="cuisine-desc">Also known as "chicken bang." Alongside "unexpired noodles," Wayne has invented an entire alternative pantry that viewers have fully adopted.</p>
+      </div>
+      <div class="cuisine-card reveal" style="transition-delay:0.15s">
+        <span class="cuisine-abbr">04</span>
+        <h3 class="cuisine-name">Thai Massage</h3>
+        <p class="cuisine-region">Instructional Quips</p>
+        <p class="cuisine-desc">"Gently give it a Thai massage" — the signature instruction whenever meat needs marinating. Not a quick rub. A Thai massage. Delivered with complete deadpan sincerity, every time.</p>
+      </div>
+      <div class="cuisine-card reveal" style="transition-delay:0.2s">
+        <span class="cuisine-abbr">05</span>
+        <h3 class="cuisine-name">Grandma's Cleaver</h3>
+        <p class="cuisine-region">The Grandma Universe</p>
+        <p class="cuisine-desc">Ingredients come from grandma's garden. Tools belong to grandma. Cousin's hands occasionally assist. A whole family lives inside every recipe.</p>
+      </div>
+      <div class="cuisine-card reveal" style="transition-delay:0.25s">
+        <span class="cuisine-abbr">06</span>
+        <h3 class="cuisine-name">Fast-Paced Cuts</h3>
+        <p class="cuisine-region">The Visual Style</p>
+        <p class="cuisine-desc">Rapid editing, close-up shots, no wasted frames. Quick enough to hold attention, clear enough to actually follow the recipe.</p>
+      </div>
+      <div class="cuisine-card reveal" style="transition-delay:0.3s">
+        <span class="cuisine-abbr">07</span>
+        <h3 class="cuisine-name">Real Techniques</h3>
+        <p class="cuisine-region">The Substance</p>
+        <p class="cuisine-desc">Beneath every gag is a genuine recipe. Authentic Chinese home-cooking methods, simplified for a global audience — which is why the channel actually teaches people to cook.</p>
+      </div>
+      <div class="cuisine-card reveal" style="transition-delay:0.35s">
+        <span class="cuisine-abbr">08</span>
+        <h3 class="cuisine-name">Based in China</h3>
+        <p class="cuisine-region">The Home Base</p>
+        <p class="cuisine-desc">Wayne operates from China, turning a local kitchen into the unlikely studio behind one of the internet's most beloved cooking channels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="connect-section" id="connect">
+  <div class="connect-inner">
+    <div class="reveal">
+      <p class="section-tag">Stay in touch</p>
+      <h2 class="connect-heading">Follow the chaos.</h2>
+      <p class="connect-sub">New recipes, new memes, new relatives. Subscribe and we'll let you know every time something gets done and dusted out of this world.</p>
+      <p style="margin-top:24px;font-size:15px;color:var(--mid-gray);">For business enquiries: <a href="mailto:foodiechina888@gmail.com" style="color:var(--accent);text-decoration:none;font-weight:500;">foodiechina888@gmail.com</a></p>
+    </div>
+    <div class="email-form reveal" style="transition-delay:0.15s">
+      <p class="form-label">Newsletter</p>
+      <div class="form-row">
+        <input class="email-input" type="email" placeholder="Your email address" required>
+        <button class="email-btn">Subscribe</button>
+      </div>
+      <p class="form-note">No spam. Unsubscribe anytime. We promise not to rinse your inbox with water from Mississippi River.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <p class="section-tag">Contact</p>
+      <h2 class="contact-heading">Get in touch.</h2>
+      <p class="contact-sub">For business enquiries, collaborations, or anything else — reach out directly.</p>
+      <p class="contact-sub" style="margin-top:20px;">Keep the lab running. Keep the water flowing.<br>Every drop counts toward the next video.</p>
+      <div style="margin-top:32px;">
+        <a href="https://www.buymeacoffee.com/foodiechina888" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--accent);border-radius:12px;text-decoration:none;font-size:15px;font-weight:600;color:#ffffff;font-family:-apple-system,sans-serif;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          💧 Refill the Mississippi River
+        </a>
+      </div>
+    </div>
+    <div class="contact-cards reveal" style="transition-delay:0.15s">
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M2 7l10 7 10-7"/>
+          </svg>
+        </div>
+        <div class="contact-card-info">
+          <span class="contact-card-label">Email</span>
+          <a href="mailto:foodiechina888@gmail.com" class="contact-card-value">foodiechina888@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">foodiechina888</span>
+    <span class="footer-copy">© 2026 <a href="https://foodiechina888.com">foodiechina888.com</a> · Wayne Shen · <a href="mailto:foodiechina888@gmail.com">foodiechina888@gmail.com</a> · All rights reserved</span>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── CONSOLE EASTER EGG ──
+console.log('%cDone and dusted! Out of this world!', 'color:#c0392b;font-size:20px;font-weight:bold;');
+console.log('%cfoodiechina888 · Wayne Shen · gently give it a Thai massage', 'color:#6e6e73;font-size:12px;');
+
+// ── TOAST ──
+function showToast(msg, duration = 3200) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), duration);
+}
+
+// ── SCROLL REVEAL ──
+// Remove inline transition-delay from HTML — handled by nth-child CSS
+document.querySelectorAll('[style*="transition-delay"]').forEach(el => {
+  el.style.transitionDelay = '';
+});
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Also observe stat cards individually for stagger
+document.querySelectorAll('.about-stat').forEach(el => {
+  el.classList.add('reveal');
+  obs.observe(el);
+});
+
+// ── EMAIL SUBSCRIBE ──
+document.querySelector('.email-btn').addEventListener('click', function () {
+  const input = document.querySelector('.email-input');
+  const email = input.value.trim();
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!email) {
+    input.style.borderColor = 'var(--accent)';
+    input.focus();
+    setTimeout(() => { input.style.borderColor = ''; }, 1800);
+    return;
+  }
+  if (!emailRe.test(email)) {
+    input.style.borderColor = 'var(--accent)';
+    input.focus();
+    showToast('Please enter a valid email address.');
+    setTimeout(() => { input.style.borderColor = ''; }, 1800);
+    return;
+  }
+
+  // Loading state
+  const btn = this;
+  btn.disabled = true;
+  input.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Subscribing…';
+
+  // Simulate async (replace with real endpoint)
+  setTimeout(() => {
+    btn.innerHTML = 'Done ✓';
+    btn.style.background = '#27ae60';
+    input.value = '';
+    showToast('Done and dusted! Check your inbox. 🍜');
+  }, 1400);
+});
+
+// ── FOLLOWER COUNTS (static) ──
+const COUNTS = {
+  youtube:   2200000,
+  facebook:  3500000,
+  instagram: 3800000,
+  tiktok:    1600000,
+  threads:    700000,
+};
+
+function formatCount(n) {
+  if (!n && n !== 0) return '—';
+  if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+  if (n >= 10000)   return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+  if (n >= 1000)    return n.toLocaleString();
+  return n.toString();
+}
+
+let total = 0;
+Object.entries(COUNTS).forEach(([p, n]) => {
+  const el = document.getElementById('count-' + p);
+  if (el) el.textContent = formatCount(n);
+  total += n;
+});
+document.getElementById('total-count').textContent = formatCount(total);
+</script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="foodiechina888" data-description="Support me on Buy me a coffee!" data-message="If this recipe worked, support the lab. If it didn't, donate so I can do better next time. Done and dusted." data-color="#FF5F5F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+</body>
+</html>
