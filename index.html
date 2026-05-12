@@ -11,16 +11,11 @@
 <meta property="og:description" content="Wayne Shen's Chinese cooking channel. Real Chinese home cooking with grandma's cleaver, evil chicken bouillon, and Water from Mississippi River.">
 <meta property="og:url" content="https://foodiechina888.com">
 <meta property="og:site_name" content="foodiechina888">
-<meta property="og:image" content="https://foodiechina888.com/assets/foodiechina888-hero.png">
-<meta property="og:image:width" content="800">
-<meta property="og:image:height" content="800">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="foodiechina888">
 <meta name="twitter:description" content="Chinese home cooking, done and dusted out of this world. By Wayne Shen.">
-<meta name="twitter:image" content="https://foodiechina888.com/assets/foodiechina888-hero.png">
 <link rel="canonical" href="https://foodiechina888.com">
 <meta name="google-site-verification" content="D6DYBwe8B-BTlMk88sdAoNlise5E9dcAKh7Dnr-8Uxw" />
-<link rel="preload" as="image" href="assets/foodiechina888-hero.webp" type="image/webp">
 <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -96,45 +91,14 @@ nav {
   padding-top: 52px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  text-align: left;
-  background: #170f0a;
+  text-align: center;
+  background: var(--white);
   position: relative;
   overflow: hidden;
-  isolation: isolate;
-  padding-left: max(24px, calc((100vw - 1200px) / 2 + 24px));
-  padding-right: max(24px, calc((100vw - 1200px) / 2 + 24px));
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-image: url("assets/foodiechina888-hero.png");
-  background-image: image-set(
-    url("assets/foodiechina888-hero.webp") type("image/webp"),
-    url("assets/foodiechina888-hero.png") type("image/png")
-  );
-  background-size: cover;
-  background-position: center 38%;
-  transform: scale(1.015);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(90deg, rgba(23,15,10,0.82) 0%, rgba(23,15,10,0.58) 38%, rgba(23,15,10,0.18) 72%, rgba(23,15,10,0.32) 100%),
-    linear-gradient(180deg, rgba(23,15,10,0.25) 0%, rgba(23,15,10,0.08) 48%, rgba(23,15,10,0.5) 100%);
-}
-
-.hero > *:not(.hero-scroll-hint) {
-  width: min(100%, 660px);
-  max-width: 660px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .hero-eyebrow {
@@ -143,22 +107,20 @@ nav {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #ffd37b;
+  color: var(--accent);
   margin-bottom: 28px;
   opacity: 0;
-  text-shadow: 0 2px 18px rgba(0,0,0,0.45);
   animation: fadeUp 0.9s 0.1s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
 }
 
 .hero-title {
-  font-size: clamp(52px, 8vw, 96px);
+  font-size: clamp(56px, 10vw, 120px);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.0;
-  color: var(--white);
+  color: var(--dark-gray);
   margin-bottom: 28px;
   opacity: 0;
-  text-shadow: 0 8px 32px rgba(0,0,0,0.5);
   animation: fadeUp 0.9s 0.2s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
 }
 
@@ -167,11 +129,10 @@ nav {
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.25;
-  color: #ffd37b;
+  color: var(--accent);
   margin-bottom: 24px;
   text-transform: lowercase;
   opacity: 0;
-  text-shadow: 0 5px 24px rgba(0,0,0,0.45);
   animation: fadeUp 0.9s 0.3s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
 }
 
@@ -180,11 +141,10 @@ nav {
   font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 1.5;
-  color: rgba(255,255,255,0.9);
-  max-width: 620px;
+  color: var(--mid-gray);
+  max-width: 680px;
   margin-bottom: 48px;
   opacity: 0;
-  text-shadow: 0 4px 22px rgba(0,0,0,0.5);
   animation: fadeUp 0.9s 0.45s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
 }
 
@@ -215,25 +175,23 @@ nav {
 }
 
 .btn-dark {
-  background: var(--accent);
+  background: var(--dark-gray);
   color: var(--white);
 }
 
 .btn-dark:hover {
-  background: #A92D26;
+  background: var(--black);
   transform: scale(1.02);
 }
 
 .btn-light {
-  background: rgba(255,255,255,0.08);
-  color: var(--white);
-  border: 1px solid rgba(255,255,255,0.42);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: transparent;
+  color: var(--dark-gray);
+  border: 1px solid rgba(0,0,0,0.2);
 }
 
 .btn-light:hover {
-  background: rgba(255,255,255,0.18);
+  background: var(--off-white);
   transform: scale(1.02);
 }
 
@@ -241,7 +199,6 @@ nav {
   background: var(--accent);
   color: #ffffff;
   border: none;
-  box-shadow: 0 16px 36px rgba(0,0,0,0.22);
 }
 
 .btn-bmc:hover {
@@ -252,8 +209,6 @@ nav {
 .hero-scroll-hint {
   position: absolute;
   bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -265,7 +220,7 @@ nav {
 .scroll-line {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.85));
+  background: linear-gradient(to bottom, transparent, var(--mid-gray));
   animation: scrollPulse 2s 1.5s infinite;
 }
 
@@ -1108,25 +1063,6 @@ footer {
   nav { padding: 0 20px; }
   .nav-links { gap: 20px; }
   .nav-links li:nth-child(n+3) { display: none; }
-  .hero {
-    min-height: 92vh;
-    justify-content: flex-end;
-    padding-bottom: 92px;
-  }
-  .hero::before {
-    background-position: center top;
-  }
-  .hero::after {
-    background:
-      linear-gradient(180deg, rgba(23,15,10,0.1) 0%, rgba(23,15,10,0.28) 42%, rgba(23,15,10,0.86) 100%),
-      linear-gradient(90deg, rgba(23,15,10,0.62), rgba(23,15,10,0.38));
-  }
-  .hero-title {
-    font-size: clamp(36px, 10.5vw, 44px);
-    letter-spacing: -0.035em;
-  }
-  .hero-catchphrase { font-size: clamp(22px, 7vw, 34px); }
-  .hero-tagline { font-size: 17px; margin-bottom: 32px; }
   .pillars-grid { grid-template-columns: 1fr; }
   .about-stat-grid { grid-template-columns: 1fr 1fr; }
   .cuisines-grid { grid-template-columns: 1fr 1fr; }
