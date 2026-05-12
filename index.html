@@ -11,11 +11,15 @@
 <meta property="og:description" content="Wayne Shen's Chinese cooking channel. Real Chinese home cooking with grandma's cleaver, evil chicken bouillon, and Water from Mississippi River.">
 <meta property="og:url" content="https://foodiechina888.com">
 <meta property="og:site_name" content="foodiechina888">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://foodiechina888.com/assets/foodiechina888-hero-wide.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="foodiechina888">
 <meta name="twitter:description" content="Chinese home cooking, done and dusted out of this world. By Wayne Shen.">
+<meta name="twitter:image" content="https://foodiechina888.com/assets/foodiechina888-hero-wide.png">
 <link rel="canonical" href="https://foodiechina888.com">
 <meta name="google-site-verification" content="D6DYBwe8B-BTlMk88sdAoNlise5E9dcAKh7Dnr-8Uxw" />
+<link rel="preload" as="image" href="assets/foodiechina888-hero-wide.webp" type="image/webp" media="(min-width: 769px)">
+<link rel="preload" as="image" href="assets/foodiechina888-hero-mobile.webp" type="image/webp" media="(max-width: 768px)">
 <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -87,18 +91,46 @@ nav {
 
 /* ── HERO ── */
 .hero {
-  min-height: 100vh;
-  padding-top: 52px;
+  min-height: 96svh;
+  padding: 52px clamp(24px, 6vw, 96px) 48px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  text-align: center;
-  background: var(--white);
+  text-align: left;
+  background: #f8d486;
   position: relative;
   overflow: hidden;
-  padding-left: 24px;
-  padding-right: 24px;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    image-set(
+      url("assets/foodiechina888-hero-wide.webp") type("image/webp"),
+      url("assets/foodiechina888-hero-wide.png") type("image/png")
+    );
+  background-size: cover;
+  background-position: center right;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(255,238,187,0.96) 0%, rgba(255,230,164,0.82) 31%, rgba(255,218,133,0.22) 57%, rgba(124,76,34,0.08) 100%),
+    linear-gradient(180deg, rgba(255,247,218,0.28) 0%, rgba(86,42,8,0.10) 100%);
+}
+
+.hero-content {
+  width: min(620px, 100%);
+  padding-top: 16px;
 }
 
 .hero-eyebrow {
@@ -107,19 +139,19 @@ nav {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 28px;
+  color: #8F241D;
+  margin-bottom: 22px;
   opacity: 0;
   animation: fadeUp 0.9s 0.1s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
 }
 
 .hero-title {
-  font-size: clamp(56px, 10vw, 120px);
+  font-size: clamp(54px, 7.2vw, 96px);
   font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.0;
-  color: var(--dark-gray);
-  margin-bottom: 28px;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  color: #21130D;
+  margin-bottom: 24px;
   opacity: 0;
   animation: fadeUp 0.9s 0.2s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
 }
@@ -129,7 +161,7 @@ nav {
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.25;
-  color: var(--accent);
+  color: #A12B23;
   margin-bottom: 24px;
   text-transform: lowercase;
   opacity: 0;
@@ -141,9 +173,9 @@ nav {
   font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 1.5;
-  color: var(--mid-gray);
-  max-width: 680px;
-  margin-bottom: 48px;
+  color: rgba(49,31,20,0.78);
+  max-width: 560px;
+  margin-bottom: 34px;
   opacity: 0;
   animation: fadeUp 0.9s 0.45s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
 }
@@ -152,7 +184,7 @@ nav {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   opacity: 0;
   animation: fadeUp 0.9s 0.6s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
 }
@@ -175,23 +207,25 @@ nav {
 }
 
 .btn-dark {
-  background: var(--dark-gray);
+  background: #20130D;
   color: var(--white);
 }
 
 .btn-dark:hover {
-  background: var(--black);
+  background: #000000;
   transform: scale(1.02);
 }
 
 .btn-light {
-  background: transparent;
-  color: var(--dark-gray);
-  border: 1px solid rgba(0,0,0,0.2);
+  background: rgba(255,255,255,0.28);
+  color: #2B1A12;
+  border: 1px solid rgba(43,26,18,0.26);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .btn-light:hover {
-  background: var(--off-white);
+  background: rgba(255,255,255,0.46);
   transform: scale(1.02);
 }
 
@@ -208,7 +242,8 @@ nav {
 
 .hero-scroll-hint {
   position: absolute;
-  bottom: 40px;
+  bottom: 32px;
+  left: clamp(24px, 6vw, 96px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -220,7 +255,7 @@ nav {
 .scroll-line {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, transparent, var(--mid-gray));
+  background: linear-gradient(to bottom, transparent, rgba(43,26,18,0.48));
   animation: scrollPulse 2s 1.5s infinite;
 }
 
@@ -933,6 +968,14 @@ nav {
   letter-spacing: 0.01em;
 }
 
+#bmc-wbtn + div,
+#bmc-wbtn + span,
+.bmc-widget-container,
+.bmc-widget-message,
+.bmc-widget-popup {
+  display: none !important;
+}
+
 /* ── FOOTER ── */
 footer {
   background: var(--white);
@@ -1057,12 +1100,103 @@ footer {
   .cuisines-grid { grid-template-columns: repeat(2, 1fr); }
   .cuisines-header { flex-direction: column; align-items: flex-start; }
   .cuisines-header-note { text-align: left; }
+  .hero {
+    min-height: 92svh;
+  }
+  .hero-content {
+    width: min(560px, 100%);
+  }
+  .hero-title {
+    font-size: clamp(48px, 8vw, 76px);
+  }
+  .hero-tagline {
+    max-width: 520px;
+  }
 }
 
 @media (max-width: 768px) {
   nav { padding: 0 20px; }
   .nav-links { gap: 20px; }
   .nav-links li:nth-child(n+3) { display: none; }
+  .hero {
+    min-height: calc(100svh - 52px);
+    padding: 52px 22px 88px;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    background: #7b4a1e;
+  }
+  .hero::before {
+    background:
+      image-set(
+        url("assets/foodiechina888-hero-mobile.webp") type("image/webp"),
+        url("assets/foodiechina888-hero-mobile.png") type("image/png")
+      );
+    background-size: cover;
+    background-position: center top;
+  }
+  .hero::after {
+    background:
+      linear-gradient(180deg, rgba(255,225,143,0.04) 0%, rgba(113,64,24,0.10) 46%, rgba(36,19,9,0.74) 70%, rgba(28,14,6,0.96) 100%),
+      linear-gradient(90deg, rgba(33,18,10,0.30) 0%, rgba(33,18,10,0.02) 35%, rgba(33,18,10,0.02) 65%, rgba(33,18,10,0.30) 100%);
+  }
+  .hero-content {
+    width: min(100%, 430px);
+    padding-top: 0;
+  }
+  .hero-eyebrow {
+    color: #FFD79A;
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    color: #FFF3D2;
+    font-size: clamp(39px, 10.8vw, 50px);
+    line-height: 0.96;
+    letter-spacing: -0.028em;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.34);
+  }
+  .hero-catchphrase {
+    color: #FFD27A;
+    font-size: clamp(21px, 6vw, 28px);
+    margin-bottom: 14px;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.32);
+  }
+  .hero-tagline {
+    display: none;
+  }
+  .hero-cta {
+    justify-content: center;
+    gap: 10px;
+  }
+  .hero-cta .btn {
+    padding: 11px 16px;
+    font-size: 14px;
+  }
+  .hero-cta .btn-bmc {
+    display: none;
+  }
+  .btn-dark {
+    background: #FFF3D2;
+    color: #24130B;
+  }
+  .btn-dark:hover {
+    background: #FFFFFF;
+  }
+  .btn-light {
+    color: #FFF3D2;
+    border-color: rgba(255,243,210,0.36);
+    background: rgba(255,255,255,0.10);
+  }
+  .btn-light:hover {
+    background: rgba(255,255,255,0.18);
+  }
+  .hero-scroll-hint { display: none; }
+  #bmc-wbtn {
+    right: 16px !important;
+    bottom: 16px !important;
+  }
   .pillars-grid { grid-template-columns: 1fr; }
   .about-stat-grid { grid-template-columns: 1fr 1fr; }
   .cuisines-grid { grid-template-columns: 1fr 1fr; }
@@ -1072,6 +1206,21 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 88px;
+  }
+  .hero-title {
+    font-size: clamp(34px, 10vw, 42px);
+  }
+  .hero-tagline {
+    font-size: 15px;
+  }
+  .hero-cta .btn {
+    flex: 1 1 auto;
+    min-width: 132px;
+  }
   .cuisines-grid { grid-template-columns: 1fr; }
   .form-row { flex-direction: column; }
   .nav-links { display: none; }
@@ -1098,14 +1247,16 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <p class="hero-eyebrow">by Wayne Shen</p>
-  <h1 class="hero-title">foodiechina888</h1>
-  <p class="hero-catchphrase">Done and dusted,<br>out of this world.</p>
-  <p class="hero-tagline">Satirical. Fast-paced. Genuinely delicious. Real Chinese home cooking — grandma's cleaver, evil chicken bouillon, Water from Mississippi River, and always a Thai massage for the meat.</p>
-  <div class="hero-cta">
-    <a href="#explore" class="btn btn-dark">Explore ↓</a>
-    <a href="#about" class="btn btn-light">My Story</a>
-    <a href="https://www.buymeacoffee.com/foodiechina888" target="_blank" rel="noopener" class="btn btn-bmc">💧 Refill the Mississippi River</a>
+  <div class="hero-content">
+    <p class="hero-eyebrow">by Wayne Shen</p>
+    <h1 class="hero-title">foodiechina888</h1>
+    <p class="hero-catchphrase">Done and dusted,<br>out of this world.</p>
+    <p class="hero-tagline">Satirical. Fast-paced. Genuinely delicious. Real Chinese home cooking — grandma's cleaver, evil chicken bouillon, Water from Mississippi River, and always a Thai massage for the meat.</p>
+    <div class="hero-cta">
+      <a href="#explore" class="btn btn-dark">Explore ↓</a>
+      <a href="#about" class="btn btn-light">My Story</a>
+      <a href="https://www.buymeacoffee.com/foodiechina888" target="_blank" rel="noopener" class="btn btn-bmc">💧 Refill the Mississippi River</a>
+    </div>
   </div>
   <div class="hero-scroll-hint">
     <div class="scroll-line"></div>
