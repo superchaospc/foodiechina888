@@ -14,6 +14,13 @@ The site is a single-page HTML/CSS/JavaScript website built for fast loading, si
 
 ## Latest Update
 
+`v1.1.1` refines the site palette to better match the new hero artwork:
+
+- Keeps the warm gold and rice-paper base from the illustration.
+- Adds muted jade and teal accents drawn from the greens in the bowl and landscape.
+- Softens section backgrounds, borders, cards, and hover states so the page feels cohesive below the hero.
+- Keeps the chili-red accent for key calls to action and follower counts.
+
 `v1.1.0` adds a full-screen illustrated hero system:
 
 - Desktop uses a wide cinematic background with the brand copy placed in the open left side of the artwork.
