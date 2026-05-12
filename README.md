@@ -12,6 +12,15 @@ Official static website for [foodiechina888.com](https://foodiechina888.com), Wa
 
 The site is a single-page HTML/CSS/JavaScript website built for fast loading, simple maintenance, and GitHub-to-Netlify deployment.
 
+## Latest Update
+
+`v1.1.0` adds a full-screen illustrated hero system:
+
+- Desktop uses a wide cinematic background with the brand copy placed in the open left side of the artwork.
+- Mobile switches to a portrait background so the character, bowl, and Great Wall composition stay visible.
+- Social preview metadata now uses the hero artwork for richer link previews.
+- The Buy Me a Coffee widget is kept as a compact floating button so it does not cover the hero image.
+
 ## 🥢 About
 
 `foodiechina888` is a Chinese home cooking and food entertainment brand known for deadpan recipe videos, family kitchen lore, and the catchphrase:
@@ -32,10 +41,24 @@ This website collects the channel identity, social links, business contact infor
 
 ```text
 .
+├── assets/
+│   ├── foodiechina888-hero-mobile.png
+│   ├── foodiechina888-hero-mobile.webp
+│   ├── foodiechina888-hero-wide.png
+│   └── foodiechina888-hero-wide.webp
 ├── index.html
 ├── netlify.toml
 └── README.md
 ```
+
+## 🖼️ Artwork
+
+The homepage uses two responsive hero images:
+
+- `assets/foodiechina888-hero-wide.webp` for desktop and tablet layouts
+- `assets/foodiechina888-hero-mobile.webp` for phone layouts
+
+PNG versions are kept as fallbacks and for social previews.
 
 ## 🚀 Netlify
 
@@ -56,6 +79,18 @@ Open `index.html` directly in a browser:
 
 ```text
 file:///path/to/foodiechina888/index.html
+```
+
+Or run a simple local server from the repository root:
+
+```bash
+python3 -m http.server 4173
+```
+
+Then visit:
+
+```text
+http://127.0.0.1:4173
 ```
 
 No build step is required.
