@@ -32,6 +32,9 @@ This website collects the channel identity, social links, business contact infor
 
 ```text
 .
+├── assets/
+│   ├── foodiechina888-hero.png
+│   └── foodiechina888-hero.webp
 ├── index.html
 ├── netlify.toml
 └── README.md
