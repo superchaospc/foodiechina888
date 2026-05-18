@@ -14,6 +14,13 @@ The site is a single-page HTML/CSS/JavaScript website built for fast loading, si
 
 ## Latest Update
 
+`v1.1.3` adds a discreet background music player:
+
+- Shows the current background track name, `Sparkle`, in a small lower-left player.
+- Adds a compact play/pause button so visitors can turn the music off or back on.
+- Keeps the default automatic playback attempt and continuous looping behavior.
+- Places the control away from the Buy Me a Coffee widget so the floating UI does not overlap.
+
 `v1.1.2` adds background music:
 
 - Adds `assets/sparkle.mp3` as the site's background track.
@@ -83,7 +90,7 @@ The homepage uses `assets/sparkle.mp3` as a looping background track through a n
 <audio id="bg-music" src="assets/sparkle.mp3" autoplay loop preload="auto" playsinline></audio>
 ```
 
-The script retries playback on page load and browser cache restore. Some browsers may still block audible autoplay for first-time visitors because of browser-level autoplay policies.
+The script retries playback on page load and browser cache restore. A small lower-left player displays `Sparkle` and gives visitors a play/pause control. Some browsers may still block audible autoplay for first-time visitors because of browser-level autoplay policies.
 
 ## 🚀 Netlify
 

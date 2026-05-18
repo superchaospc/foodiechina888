@@ -1076,6 +1076,81 @@ footer {
   transform: translateX(-50%) translateY(0);
 }
 
+/* Background music player */
+.music-player {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 9997;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(300px, calc(100vw - 36px));
+  padding: 9px 10px 9px 14px;
+  color: rgba(37,21,13,0.82);
+  background: rgba(255,250,240,0.78);
+  border: 0.5px solid rgba(98,58,22,0.16);
+  border-radius: 980px;
+  box-shadow: 0 12px 28px rgba(77,40,10,0.12);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+}
+.music-player-track {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.music-player-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(111,82,56,0.76);
+}
+.music-player-title {
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--dark-gray);
+}
+.music-player-btn {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  color: var(--white);
+  background: var(--accent);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.music-player-btn:hover {
+  background: #98291f;
+  transform: scale(1.04);
+}
+.music-player-btn svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+.music-player .icon-play {
+  display: none;
+}
+.music-player.is-paused .icon-pause {
+  display: none;
+}
+.music-player.is-paused .icon-play {
+  display: block;
+}
+
 /* Spinner for subscribe button */
 @keyframes spin {
   to { transform: rotate(360deg); }
@@ -1202,6 +1277,14 @@ footer {
   #bmc-wbtn {
     right: 16px !important;
     bottom: 16px !important;
+  }
+  .music-player {
+    left: 14px;
+    bottom: 14px;
+    max-width: min(260px, calc(100vw - 28px));
+  }
+  .music-player-title {
+    max-width: 138px;
   }
   .pillars-grid { grid-template-columns: 1fr; }
   .about-stat-grid { grid-template-columns: 1fr 1fr; }
@@ -1508,6 +1591,20 @@ footer {
 
 <!-- BACKGROUND MUSIC -->
 <audio id="bg-music" src="assets/sparkle.mp3" autoplay loop preload="auto" playsinline></audio>
+<div class="music-player is-paused" id="music-player" aria-label="Background music player">
+  <div class="music-player-track">
+    <span class="music-player-label">Now playing</span>
+    <span class="music-player-title">Sparkle</span>
+  </div>
+  <button class="music-player-btn" id="music-player-toggle" type="button" aria-label="Play background music" aria-pressed="false" title="Play or pause background music">
+    <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+    <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+      <path d="M7 5h4v14H7zm6 0h4v14h-4z"/>
+    </svg>
+  </button>
+</div>
 
 <script>
 // ── CONSOLE EASTER EGG ──
@@ -1524,22 +1621,45 @@ function showToast(msg, duration = 3200) {
 
 // ── BACKGROUND MUSIC ──
 const bgMusic = document.getElementById('bg-music');
+const musicPlayer = document.getElementById('music-player');
+const musicPlayerToggle = document.getElementById('music-player-toggle');
 if (bgMusic) {
   bgMusic.autoplay = true;
   bgMusic.loop = true;
   bgMusic.muted = false;
   bgMusic.volume = 0.42;
 
+  function updateMusicPlayer() {
+    const isPlaying = !bgMusic.paused;
+    if (musicPlayer) musicPlayer.classList.toggle('is-paused', !isPlaying);
+    if (musicPlayerToggle) {
+      musicPlayerToggle.setAttribute('aria-pressed', String(isPlaying));
+      musicPlayerToggle.setAttribute('aria-label', isPlaying ? 'Pause background music' : 'Play background music');
+    }
+  }
+
   function playBackgroundMusic() {
     bgMusic.muted = false;
-    bgMusic.play().catch(() => {
+    bgMusic.play().then(updateMusicPlayer).catch(() => {
       // Some browsers block audible autoplay until the visitor interacts with the page.
+      updateMusicPlayer();
     });
   }
+
+  bgMusic.addEventListener('play', updateMusicPlayer);
+  bgMusic.addEventListener('pause', updateMusicPlayer);
+  musicPlayerToggle?.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      playBackgroundMusic();
+      return;
+    }
+    bgMusic.pause();
+  });
 
   document.addEventListener('DOMContentLoaded', playBackgroundMusic, { once: true });
   window.addEventListener('load', playBackgroundMusic, { once: true });
   window.addEventListener('pageshow', playBackgroundMusic);
+  updateMusicPlayer();
   playBackgroundMusic();
 }
 
