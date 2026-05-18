@@ -14,6 +14,13 @@ The site is a single-page HTML/CSS/JavaScript website built for fast loading, si
 
 ## Latest Update
 
+`v1.1.4` strengthens automatic background music playback:
+
+- Retries playback across audio readiness events, page load, page restore, and page visibility changes.
+- Adds short delayed retry attempts after the page opens.
+- Starts playback after the first general page click or keypress if a browser blocks initial audible autoplay.
+- Keeps the lower-left `Sparkle` player available for manual pause and resume.
+
 `v1.1.3` adds a discreet background music player:
 
 - Shows the current background track name, `Sparkle`, in a small lower-left player.
@@ -90,7 +97,7 @@ The homepage uses `assets/sparkle.mp3` as a looping background track through a n
 <audio id="bg-music" src="assets/sparkle.mp3" autoplay loop preload="auto" playsinline></audio>
 ```
 
-The script retries playback on page load and browser cache restore. A small lower-left player displays `Sparkle` and gives visitors a play/pause control. Some browsers may still block audible autoplay for first-time visitors because of browser-level autoplay policies.
+The script retries playback when the audio becomes ready, when the page loads, when it restores from browser cache, when the tab becomes visible again, and through several short delayed attempts after opening. A small lower-left player displays `Sparkle` and gives visitors a play/pause control. Some browsers may still block audible autoplay for first-time visitors because of browser-level autoplay policies; in that case, the first general page click or keypress starts playback.
 
 ## 🚀 Netlify
 
