@@ -14,6 +14,13 @@ The site is a single-page HTML/CSS/JavaScript website built for fast loading, si
 
 ## Latest Update
 
+`v1.1.2` adds background music:
+
+- Adds `assets/sparkle.mp3` as the site's background track.
+- Enables automatic playback attempts when the homepage opens, loads, or restores from browser cache.
+- Loops the track continuously with no visible playback controls.
+- Keeps the implementation static and dependency-free with a native HTML audio element.
+
 `v1.1.1` refines the site palette to better match the new hero artwork:
 
 - Keeps the warm gold and rice-paper base from the illustration.
@@ -52,7 +59,8 @@ This website collects the channel identity, social links, business contact infor
 │   ├── foodiechina888-hero-mobile.png
 │   ├── foodiechina888-hero-mobile.webp
 │   ├── foodiechina888-hero-wide.png
-│   └── foodiechina888-hero-wide.webp
+│   ├── foodiechina888-hero-wide.webp
+│   └── sparkle.mp3
 ├── index.html
 ├── netlify.toml
 └── README.md
@@ -66,6 +74,16 @@ The homepage uses two responsive hero images:
 - `assets/foodiechina888-hero-mobile.webp` for phone layouts
 
 PNG versions are kept as fallbacks and for social previews.
+
+## 🎵 Background Music
+
+The homepage uses `assets/sparkle.mp3` as a looping background track through a native HTML audio element:
+
+```html
+<audio id="bg-music" src="assets/sparkle.mp3" autoplay loop preload="auto" playsinline></audio>
+```
+
+The script retries playback on page load and browser cache restore. Some browsers may still block audible autoplay for first-time visitors because of browser-level autoplay policies.
 
 ## 🚀 Netlify
 

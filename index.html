@@ -1506,6 +1506,9 @@ footer {
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
+<!-- BACKGROUND MUSIC -->
+<audio id="bg-music" src="assets/sparkle.mp3" autoplay loop preload="auto" playsinline></audio>
+
 <script>
 // ── CONSOLE EASTER EGG ──
 console.log('%cDone and dusted! Out of this world!', 'color:#B8342A;font-size:20px;font-weight:bold;');
@@ -1517,6 +1520,27 @@ function showToast(msg, duration = 3200) {
   t.textContent = msg;
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), duration);
+}
+
+// ── BACKGROUND MUSIC ──
+const bgMusic = document.getElementById('bg-music');
+if (bgMusic) {
+  bgMusic.autoplay = true;
+  bgMusic.loop = true;
+  bgMusic.muted = false;
+  bgMusic.volume = 0.42;
+
+  function playBackgroundMusic() {
+    bgMusic.muted = false;
+    bgMusic.play().catch(() => {
+      // Some browsers block audible autoplay until the visitor interacts with the page.
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', playBackgroundMusic, { once: true });
+  window.addEventListener('load', playBackgroundMusic, { once: true });
+  window.addEventListener('pageshow', playBackgroundMusic);
+  playBackgroundMusic();
 }
 
 // ── SCROLL REVEAL ──
