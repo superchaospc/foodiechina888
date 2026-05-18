@@ -14,6 +14,12 @@ The site is a single-page HTML/CSS/JavaScript website built for fast loading, si
 
 ## Latest Update
 
+`v1.1.5` replaces the background music track:
+
+- Replaces `assets/sparkle.mp3` with `assets/sun-kissed-haze.mp3`.
+- Updates the lower-left music player title to `Sun-Kissed Haze`.
+- Keeps autoplay attempts, looping playback, and the play/pause control behavior unchanged.
+
 `v1.1.4` strengthens automatic background music playback:
 
 - Retries playback across audio readiness events, page load, page restore, and page visibility changes.
@@ -74,7 +80,7 @@ This website collects the channel identity, social links, business contact infor
 │   ├── foodiechina888-hero-mobile.webp
 │   ├── foodiechina888-hero-wide.png
 │   ├── foodiechina888-hero-wide.webp
-│   └── sparkle.mp3
+│   └── sun-kissed-haze.mp3
 ├── index.html
 ├── netlify.toml
 └── README.md
@@ -91,13 +97,13 @@ PNG versions are kept as fallbacks and for social previews.
 
 ## 🎵 Background Music
 
-The homepage uses `assets/sparkle.mp3` as a looping background track through a native HTML audio element:
+The homepage uses `assets/sun-kissed-haze.mp3` as a looping background track through a native HTML audio element:
 
 ```html
-<audio id="bg-music" src="assets/sparkle.mp3" autoplay loop preload="auto" playsinline></audio>
+<audio id="bg-music" src="assets/sun-kissed-haze.mp3" autoplay loop preload="auto" playsinline></audio>
 ```
 
-The script retries playback when the audio becomes ready, when the page loads, when it restores from browser cache, when the tab becomes visible again, and through several short delayed attempts after opening. A small lower-left player displays `Sparkle` and gives visitors a play/pause control. Some browsers may still block audible autoplay for first-time visitors because of browser-level autoplay policies; in that case, the first general page click or keypress starts playback.
+The script retries playback when the audio becomes ready, when the page loads, when it restores from browser cache, when the tab becomes visible again, and through several short delayed attempts after opening. A small lower-left player displays `Sun-Kissed Haze` and gives visitors a play/pause control. Some browsers may still block audible autoplay for first-time visitors because of browser-level autoplay policies; in that case, the first general page click or keypress starts playback.
 
 ## 🚀 Netlify
 
