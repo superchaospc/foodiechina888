@@ -14,6 +14,13 @@ The site is a single-page HTML/CSS/JavaScript website built for fast loading, si
 
 ## Latest Update
 
+`v1.1.6` refreshes the social proof stats:
+
+- Updates Facebook followers to `3.6M`.
+- Updates Instagram followers to `3.7M`.
+- Keeps total followers aligned at `11.8M`.
+- Enlarges the infinity stat visually without shifting the label below it.
+
 `v1.1.5` replaces the background music track:
 
 - Replaces `assets/sparkle.mp3` with `assets/sun-kissed-haze.mp3`.

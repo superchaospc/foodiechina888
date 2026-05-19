@@ -576,6 +576,13 @@ nav {
   word-break: break-word;
 }
 
+.stat-infinity {
+  display: inline-block;
+  transform: scale(1.2);
+  transform-origin: left center;
+  letter-spacing: 0;
+}
+
 .stat-label {
   font-size: 14px;
   font-weight: 400;
@@ -1424,7 +1431,7 @@ footer {
         <span class="stat-label">Home base</span>
       </div>
       <div class="about-stat">
-        <span class="stat-num">∞</span>
+        <span class="stat-num stat-infinity">∞</span>
         <span class="stat-label">Water from Mississippi River</span>
       </div>
     </div>
@@ -1740,8 +1747,8 @@ document.querySelector('.email-btn').addEventListener('click', function () {
 // ── FOLLOWER COUNTS (static) ──
 const COUNTS = {
   youtube:   2200000,
-  facebook:  3500000,
-  instagram: 3800000,
+  facebook:  3600000,
+  instagram: 3700000,
   tiktok:    1600000,
   threads:    700000,
 };
