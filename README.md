@@ -1,7 +1,7 @@
 # foodiechina888 🍜
 
 [![Website](https://img.shields.io/badge/website-live-C7352D?style=for-the-badge)](https://foodiechina888.com)
-[![Deploy](https://img.shields.io/badge/deploy-Netlify-00AD9F?style=for-the-badge&logo=netlify&logoColor=white)](https://www.netlify.com/)
+![Deploy](https://img.shields.io/badge/deploy-static-222222?style=for-the-badge)
 ![HTML](https://img.shields.io/badge/HTML-static-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-inline-1572B6?style=for-the-badge&logo=css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JS-vanilla-F7DF1E?style=for-the-badge&logo=javascript&logoColor=222)
@@ -10,9 +10,14 @@
 
 Official static website for [foodiechina888.com](https://foodiechina888.com), Wayne Shen's Chinese cooking channel.
 
-The site is a single-page HTML/CSS/JavaScript website built for fast loading, simple maintenance, and GitHub-to-Netlify deployment.
+The site is a single-page HTML/CSS/JavaScript website built for fast loading, simple maintenance, and static deployment.
 
 ## Latest Update
+
+`v1.1.8` refreshes the project documentation:
+
+- Removes outdated deployment provider references.
+- Documents the site as a static, no-build deployment.
 
 `v1.1.7` refreshes the social proof stats:
 
@@ -75,8 +80,8 @@ This website collects the channel identity, social links, business contact infor
 - Static HTML
 - Inline CSS
 - Vanilla JavaScript
-- Netlify hosting
-- GitHub continuous deployment
+- Static hosting
+- No build step
 
 ## 📁 Project Structure
 
@@ -89,7 +94,6 @@ This website collects the channel identity, social links, business contact infor
 │   ├── foodiechina888-hero-wide.webp
 │   └── sun-kissed-haze.mp3
 ├── index.html
-├── netlify.toml
 └── README.md
 ```
 
@@ -112,18 +116,18 @@ The homepage uses `assets/sun-kissed-haze.mp3` as a looping background track thr
 
 The script retries playback when the audio becomes ready, when the page loads, when it restores from browser cache, when the tab becomes visible again, and through several short delayed attempts after opening. A small lower-left player displays `Sun-Kissed Haze` and gives visitors a play/pause control. Some browsers may still block audible autoplay for first-time visitors because of browser-level autoplay policies; in that case, the first general page click or keypress starts playback.
 
-## 🚀 Netlify
+## 🚀 Deployment
 
-This project is deployed through Netlify from the GitHub repository.
+This project is a static site and can be deployed by serving the repository root.
 
-Build settings:
+Build settings for any static host:
 
 ```text
 Build command: leave blank
 Publish directory: .
 ```
 
-Every push to the `main` branch triggers a new Netlify deployment.
+No framework build or dependency install is required.
 
 ## 👀 Local Preview
 
