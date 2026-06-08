@@ -14,6 +14,11 @@ The site is a single-page HTML/CSS/JavaScript website built for fast loading, si
 
 ## Latest Update
 
+`v1.1.9` refreshes the social proof stats:
+
+- Updates YouTube subscribers to `2.3M`.
+- Updates total followers to `12M`.
+
 `v1.1.8` refreshes the project documentation:
 
 - Removes outdated deployment provider references.
