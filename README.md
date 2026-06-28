@@ -14,6 +14,11 @@ The site is a single-page HTML/CSS/JavaScript website built for fast loading, si
 
 ## Latest Update
 
+`v1.1.11` refreshes the social proof stats:
+
+- Updates Facebook followers to `3.7M`.
+- Updates total followers to `12.1M`.
+
 `v1.1.10` refreshes the social proof stats:
 
 - Updates Facebook followers to `3.8M`.
